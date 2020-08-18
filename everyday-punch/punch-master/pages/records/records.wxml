@@ -1,0 +1,28 @@
+<!--pages/records.wxml-->
+<view class="userinfo">
+   <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+</view>
+<text class='timeTitle titlePading'>{{curYear}}年{{curMonth}}月{{curDay}}日</text>
+
+<view>
+ <view class="table">
+  <block wx:for="{{curListData}}" wx:key="{{dateTime}}">
+    <view class="tr bg-w">
+      <view class="th">打卡时间：{{item.dateTime}}</view>
+    </view>
+    <view class="tr bg-g" >
+      <view class="td">打卡类型：{{item.type}}</view> 
+    </view>
+    <view class="tr" >
+      <view class="td">获得金币：{{item.coin}}</view>
+      
+    </view>
+  </block>
+</view>
+</view>
+<view class="" wx:for="{{days}}" wx:key="{{index}}" >
+      <view class="{{item.today ? 'border-radius blue-bg' : ''}}  day {{item.choosed ? 'border-radius pink-bg' : ''}}  box box-align-center box-pack-center" data-idx="{{index}}" bindtap="tapDayItem">{{item.day}}
+      </view>
+
+</view>

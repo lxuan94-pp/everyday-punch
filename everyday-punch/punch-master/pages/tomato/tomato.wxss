@@ -1,0 +1,28 @@
+.textBox{
+  margin:50rpx;
+  margin-left:90rpx;
+  color: black;
+  font-size: 60rpx;
+}
+.picBox {
+  margin-left:105rpx; 
+}
+
+page {
+  background-color: white;
+}
+
+
+
+.btnStart{
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
+  margin:50rpx;
+  margin-left:150rpx;
+  margin-right:150rpx;
+  color: black;
+  font-size: 45rpx;
+  border: 1px solid black;
+  border-radius: 40px;
+  text-align: center;
+}

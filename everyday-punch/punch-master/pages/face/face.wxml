@@ -1,0 +1,35 @@
+<!--pages/face/face.wxml-->
+<view class="page-face">
+  <view class="area-tools">
+    <view class="area-tool-menu">
+      <image class="camera-reverse" src="/image/reverse.png" bindtap="camera_reverse"></image>
+    </view>
+  </view>
+  
+  <view class="area-camera">
+    <camera hidden="{{camera_hidden}}" device-position="{{position}}" flash="auto" binderror="error" class="camera"></camera>
+  </view>
+
+  <view class="camera-cover">
+    <view class="camera-menu">
+      <image class="camera-up-down" src="/image/down_menu.png"></image>
+      <view class="bottom-menu">
+        <image class="btn-addface" src="/image/add_face.png" bindtap="addface" ></image>
+        <image class="btn-takephoto" src="/image/punch.png" bindtap="takePhoto"></image>
+        <image class="btn-settime" src="/image/time_set.png" bindtap="showTimeSetting"></image>
+      </view>
+    </view>    
+  </view>
+
+  <modal hidden="{{modalPunch}}" cancelText="取消" bindconfirm="punch" bindcancel="cancelModal" confirmText="确定">
+    <view>确定使用这张图片打卡吗？</view>
+    <image wx:if="{{src}}" mode="widthFix" src="{{src}}"></image>
+  </modal>
+
+  <modal hidden="{{modalSettime}}" cancelText="取消" bindconfirm="cancelModal" bindcancel="cancelModal" confirmText="确定">
+    <text>点击以设置或更改打卡时间：</text>
+    <view class="area-picker">
+      <picker class="timepicker" mode="time" value="{{timeValue}}" start="00:00" end="24:00" bindchange="timePickerBindchange">{{timeValue}}</picker>
+    </view>
+  </modal> 
+</view>

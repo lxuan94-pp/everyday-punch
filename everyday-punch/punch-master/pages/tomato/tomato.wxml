@@ -1,0 +1,9 @@
+<!--pages/tomato/tomato.wxml-->
+<view class="backClass container">
+<view wx:if="{{state}}" class="textBox">恭喜你获得{{data}}只大番茄</view>
+  <image wx:if="{{state}}" src="../../res/tomatoGood.png" class="picBox"></image>
+  <view wx:if="{{!state}}" class="textBox">失败咯，下次继续努力</view>
+  <image wx:if="{{!state}}" style="width: 250px;height: 250px;"src="../../res/tomatoBad.png" class="picBox"></image>
+  
+  <view class="btnStart" bindtap="backTo">确认</view>
+</view>

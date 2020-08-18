@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <view class="area-face">
+      <Button bindtap="navi_face" class="btn-face"><text>人脸打卡</text></Button>
+    </view>
+    <view class="area-bottom"> 
+      <view class="area-bottom-left">
+        <view class="area-left-up">
+          <view class="area-study">
+            <Button bindtap="navi_study" class="btn-study"><text>学习打卡</text></Button>
+          </view>
+          <view class="area-sport">
+            <Button bindtap="navi_sport" class="btn-sport"><text>运动打卡</text></Button>
+          </view>
+        </view>
+        <view class="area-record">
+          <Button bindtap="navi_record" class="btn-record"><text>个人打卡记录</text></Button>
+        </view>
+      </view>
+      <view class="area-rank">
+        <Button bindtap="navi_rank" class="btn-rank"><text>每日排行</text></Button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/face/face",
+    "pages/study/study",
+    "pages/tomato/tomato",
+    "pages/setting/setting",
+    "pages/sport/sport",
+    "pages/new/new",
+    "pages/rank/rank",
+    "pages/records/records",
+    "pages/personalPunchRecord/personalPunchRecord"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "天天爱打卡",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

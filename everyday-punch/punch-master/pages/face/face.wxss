@@ -1,0 +1,117 @@
+/* pages/face/face.wxss */
+.page-face {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.area-tools {
+  background-color: #dae2e6;
+  width: 100%;
+  height: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.area-tool-menu {
+  background-color: #cdd1d3;
+  width: 100%;
+  height: 81%;
+  display: flex;
+  align-items: center;
+  box-shadow: 0rpx 2rpx 6rpx 6rpx grey;
+  justify-content: space-around;
+}
+
+.area-camera {
+  background-color: #dae2e6;
+  width: 100%;
+  height: 63%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.camera {
+  width: 560rpx; 
+  height: 560rpx; 
+  border-radius: 50%;
+}
+
+.camera-cover {
+  background-color: #dae2e6;
+  width: 100%;
+  height: 29%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  overflow: hidden;
+  justify-content: space-between
+}
+
+.camera-reverse {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+}
+
+.camera-up-down {
+  width: 36px;
+  height: 36px;
+}
+
+.camera-menu {
+  background-color: #cdd1d3;
+  width: 1200rpx;
+  height: 1200rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 600rpx;
+  box-shadow: 0rpx -1rpx 6rpx 6rpx grey;
+  margin-bottom: -860rpx;
+}
+
+.bottom-menu {
+  width: 700rpx;
+  height: 245rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.btn-addface {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.btn-takephoto {
+  width: 160rpx;
+  height: 140rpx;
+}
+
+.btn-settime {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.area-picker {
+  width: 100%;
+  height: 520rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around
+}
+
+.timepicker {
+  color: black;
+  font-size: 72px;
+  font-family: "黑体";
+  font-weight: bold
+}

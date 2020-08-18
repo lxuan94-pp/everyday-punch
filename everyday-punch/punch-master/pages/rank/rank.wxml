@@ -1,0 +1,60 @@
+<!--pages/rank/rank.wxml-->
+<view class="page">
+
+  <!-- 顶部导航栏
+  <view class="swiper-tab">
+     <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">学习打卡</view> 
+    <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">运动打卡</view>
+  </view> -->
+
+  <!--内容主体-->
+  <!-- <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">
+    <swiper-item> -->
+  <view id="ranking">
+    <view id="ranking_title">打卡英雄榜</view>
+    <view id="ranking_list">
+      <block wx:for="{{dataList}}" wx:key="item">
+        <view class="box">
+          <view wx:if="{{item.rank==1}}" class="special_rank col_1" style="background-image:url('http://ozez9em2z.bkt.clouddn.com/r3.png');">{{item.rank}}</view>
+          <view wx:if="{{item.rank==2}}" class="special_rank col_1" style="background-image:url('http://ozez9em2z.bkt.clouddn.com/r1.png');">{{item.rank}}</view>
+          <view wx:if="{{item.rank==3}}" class="special_rank col_1" style="background-image:url('http://ozez9em2z.bkt.clouddn.com/r2.png');">{{item.rank}}</view>
+          <view wx:if="{{item.rank>3}}" class="col_1">{{item.rank}}</view>
+          <view class="col_2">
+            <image src="{{item.avatar_url}}" />
+          </view>
+          <view class="col_3">{{item.nickname}}</view>
+          <view class="col_4">{{item.punch_num}}次</view>
+        </view>
+      </block>
+    </view>
+    <view class="box cur">
+          <view class="col_1">{{personalPunchData[0].rank}}</view>
+          <view class="col_2">
+            <image src="{{personalPunchData[0].avatar_url}}" />
+          </view>
+          <view class="col_3">{{personalPunchData[0].nickname}}</view>
+          <view class="col_4">{{personalPunchData[0].punch_num}}次</view>
+        </view>
+    <button open-type="share" id="play_game" bindtap="onShareAppMessage" title="分享">分享</button>
+  </view>
+  <!-- <view class="container">
+    <block wx:for="{{dataList}}" wx:key="item">
+      <view class="rank-item">
+         头像 
+        <view class="rank-img">
+          <image src="{{item.avatar_url}}"></image>
+        </view>
+         展示昵称,以及打卡积分 
+        <block>
+          <view class="rank-name">{{item.nickname}}</view>
+          <view class="rank-price">打卡次数：{{item.punch_num}}</view>
+        </block>
+        排名
+        <view class="rank-uv">
+          <text wx:if="{{item.rank>3}}">第 {{item.rank}} 名</text>
+          <image src="/image/rank{{item.rank}}.png" wx:if="{{item.rank<=3}}" />
+        </view>
+      </view>
+    </block>
+  </view> -->
+</view>

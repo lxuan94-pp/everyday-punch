@@ -1,0 +1,61 @@
+<!--pages/personalPunchRecord.wxml-->
+<!--显示用户头像、昵称-->
+<view class="userinfo">
+   <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+</view>
+
+<!--开始绘制日历-->
+<view class="flex box box-tb box-align-center">
+<!--日历上部粉色部分，显示年月，中间点击触发选择日期函数，两边按钮点击切换月份-->
+  <view class="calendar pink-color box box-tb">
+        <view class="top-handle fs28 box box-lr box-align-center box-pack-center">
+            <view class="prev box box-rl" bindtap="handleCalendar" data-handle="prev">
+                <view class="prev-handle box box-lr box-align-center box-pack-center">《</view>
+            </view>
+            <view bindtap="chooseYearAndMonth" class="date-area box box-lr box-align-center box-pack-center">{{curYear || "--"}} 年 {{curMonth || "--"}} 月</view>
+            <view class="next box box-lr" bindtap="handleCalendar" data-handle="next">
+                <view class="next-handle box box-lr box-align-center box-pack-center">》</view>
+            </view>
+        </view>
+        <!--日历头部，星期-->
+        <view class="weeks pink-color box box-lr box-pack-center box-align-center">
+            <view class="flex week fs28" wx:for="{{weeksCh}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+        </view>
+        <!--日历部分，每一天-->
+        <!--今天用蓝色圈表示，有打卡记录的日期用绿色表示，选中的日期用粉色表示-->
+        <view class="days  box box-lr box-wrap">
+            <view wx:if="{{hasEmptyGrid}}" class="grid white-color box box-align-center box-pack-center" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+            </view>
+            <view class="grid white-color box box-align-center box-pack-center" wx:for="{{days}}" wx:for-item="eveDay" wx:key="{{index}}" >
+            <view class="{{index == curDay-1 &&!eveDay.choosed ? 'border-radius blue-bg' : ''}}  {{eveDay.hasRecord&&!eveDay.choosed ? 'border-radius green-bg' : ''}} day {{eveDay.choosed ? 'border-radius pink-bg' : ''}}  box box-align-center box-pack-center" data-idx="{{index}}" bindtap="tapDayItem">
+            {{eveDay.day}}
+            </view>
+            </view>
+
+        </view>
+    </view>
+</view>
+
+<!--查看记录按钮-->
+<view wx:if="{{showRecord}}" class="box box-tb">
+<view class="showRecordBtn picker-btns box box-lr box-pack-between box-align-center">
+<button type='primary' bindtap='jumpToRecord'>查看记录</button>
+</view>
+</view>
+<!--选择日期-->
+<view wx:if="{{showPicker}}" class="box box-tb">
+	<view class="picker-btns box box-lr box-pack-between box-align-center">
+		<view class="picker-btn picker-cancel" data-type="cancel" bindtap="tapPickerBtn">取消</view>
+		<view class="picker-btn picker-confirm" data-type="confirm" bindtap="tapPickerBtn">确定</view>
+	</view>
+	<picker-view class="flex" indicator-style="height: 50px;" style="width: 100%; height: 150px;" value="{{pickerValue}}" bindchange="pickerChange">
+		<picker-view-column>
+			<view class="picker-view" wx:for="{{pickerYear}}" wx:key="*this" style="line-height: 50px">{{item}}年</view>
+		</picker-view-column>
+		<picker-view-column>
+			<view class="picker-view" wx:for="{{pickerMonth}}" wx:key="*this" style="line-height: 50px">{{item}}月</view>
+		</picker-view-column>
+	</picker-view>
+</view>
+

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "打卡排行榜",
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor": "#d55a4a",
+  "navigationBarTextStyle": "#ffffff"
+}
